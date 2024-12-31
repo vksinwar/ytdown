@@ -1,0 +1,35 @@
+{
+    "downloadTitle": "Stiahnuť videá z",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "youtube": "YouTube",
+    "pasteUrl": "Vložte URL videa sem",
+    "downloadBtn": "Stiahnuť",
+    "pasteBtn": "Vložiť",
+    "howToTitle": "Ako stiahnuť video z Instagramu/Facebooku?",
+    "features": "Funkcie",
+    "storySaver": "Ukladanie Stories",
+    "reelsDownloader": "Sťahovanie Reels",
+    "videoDownloader": "Sťahovanie Videí",
+    "photoDownloader": "Sťahovanie Fotiek",
+    "about": "O nás",
+    "contactUs": "Kontakt",
+    "privacyPolicy": "Ochrana súkromia",
+    "termsOfService": "Podmienky služby",
+    "getInTouch": "Kontaktujte nás",
+    "contactDesc": "Máte otázky o našich službách? Sme tu, aby sme vám pomohli! Náš tím je pripravený odpovedať na všetky vaše otázky.",
+    "step1Title": "Skopírujte URL",
+    "step1Desc": "Najprv prejdite do aplikácie alebo na web Instagram/Facebook a získajte odkaz na video, reels, carousel alebo obsah, ktorý chcete skopírovať.",
+    "step2Title": "Vložte odkaz",
+    "step2Desc": "Vráťte sa na web, vložte odkaz do vstupného poľa v hornej časti obrazovky a kliknite na tlačidlo \"Stiahnuť\".",
+    "step3Title": "Stiahnite",
+    "step3Desc": "Čoskoro dostanete zoznam výsledkov s rôznymi možnosťami kvality. Vyberte možnosť, ktorá najlepšie vyhovuje vašim požiadavkám, a stiahnite ju.",
+    "videoInfo": {
+        "duration": "Dĺžka",
+        "quality": "Kvalita"
+    },
+    "footer": {
+        "disclaimer": "Nie sme spojení s Instagramom ani Meta",
+        "copyright": "© 2024 InstaSave. Všetky práva vyhradené"
+    }
+} 

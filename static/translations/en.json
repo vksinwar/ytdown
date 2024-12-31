@@ -1,0 +1,35 @@
+{
+    "downloadTitle": "Download Videos from",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "youtube": "YouTube",
+    "pasteUrl": "Paste your video URL here",
+    "downloadBtn": "Download",
+    "pasteBtn": "Paste",
+    "howToTitle": "How to download video from Instagram/Facebook?",
+    "features": "Features",
+    "storySaver": "Story Saver",
+    "reelsDownloader": "Reels Downloader",
+    "videoDownloader": "Video Downloader",
+    "photoDownloader": "Photo Downloader",
+    "about": "About",
+    "contactUs": "Contact Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "getInTouch": "Get in Touch",
+    "contactDesc": "Have questions about our services? We're here to help! Our team is ready to assist you with any inquiries you might have.",
+    "step1Title": "Copy the URL",
+    "step1Desc": "To get started, access either Instagram/Facebook app or website and retrieve the link to the specific video, reels, carousel, or content that you want to copy.",
+    "step2Title": "Paste the link",
+    "step2Desc": "Return to the website, paste the link into the input field at the top of the screen and click the \"Download\" button.",
+    "step3Title": "Download",
+    "step3Desc": "In no time at all, you'll receive a list of results that offer various quality options. Choose the option that best suits your requirements and download it.",
+    "videoInfo": {
+        "duration": "Duration",
+        "quality": "Quality"
+    },
+    "footer": {
+        "disclaimer": "We are not affiliated with Instagram or Meta",
+        "copyright": "© 2024 InstaSave. All rights reserved."
+    }
+} 

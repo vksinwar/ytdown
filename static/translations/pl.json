@@ -1,0 +1,35 @@
+{
+    "downloadTitle": "Pobierz filmy z",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "youtube": "YouTube",
+    "pasteUrl": "Wklej tutaj URL filmu",
+    "downloadBtn": "Pobierz",
+    "pasteBtn": "Wklej",
+    "howToTitle": "Jak pobrać film z Instagram/Facebook?",
+    "features": "Funkcje",
+    "storySaver": "Zapisywanie Stories",
+    "reelsDownloader": "Pobieranie Reels",
+    "videoDownloader": "Pobieranie Filmów",
+    "photoDownloader": "Pobieranie Zdjęć",
+    "about": "O nas",
+    "contactUs": "Kontakt",
+    "privacyPolicy": "Polityka Prywatności",
+    "termsOfService": "Warunki Użytkowania",
+    "getInTouch": "Skontaktuj się z nami",
+    "contactDesc": "Masz pytania dotyczące naszych usług? Jesteśmy tutaj, aby pomóc! Nasz zespół jest gotowy odpowiedzieć na wszystkie Twoje pytania.",
+    "step1Title": "Skopiuj URL",
+    "step1Desc": "Na początek, wejdź do aplikacji lub na stronę Instagram/Facebook i zdobądź link do filmu, reels, karuzeli lub treści, którą chcesz skopiować.",
+    "step2Title": "Wklej link",
+    "step2Desc": "Wróć na stronę, wklej link w pole wprowadzania na górze ekranu i kliknij przycisk \"Pobierz\".",
+    "step3Title": "Pobierz",
+    "step3Desc": "W krótkim czasie otrzymasz listę wyników z różnymi opcjami jakości. Wybierz opcję, która najlepiej odpowiada Twoim potrzebom i pobierz ją.",
+    "videoInfo": {
+        "duration": "Czas trwania",
+        "quality": "Jakość"
+    },
+    "footer": {
+        "disclaimer": "Nie jesteśmy powiązani z Instagram ani Meta",
+        "copyright": "© 2024 InstaSave. Wszelkie prawa zastrzeżone"
+    }
+} 

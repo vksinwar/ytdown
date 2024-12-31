@@ -1,0 +1,35 @@
+{
+    "downloadTitle": "Tải video từ",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "youtube": "YouTube",
+    "pasteUrl": "Dán URL video tại đây",
+    "downloadBtn": "Tải xuống",
+    "pasteBtn": "Dán",
+    "howToTitle": "Cách tải video từ Instagram/Facebook?",
+    "features": "Tính năng",
+    "storySaver": "Lưu Story",
+    "reelsDownloader": "Tải Reels",
+    "videoDownloader": "Tải Video",
+    "photoDownloader": "Tải Ảnh",
+    "about": "Giới thiệu",
+    "contactUs": "Liên hệ",
+    "privacyPolicy": "Chính sách bảo mật",
+    "termsOfService": "Điều khoản dịch vụ",
+    "getInTouch": "Liên hệ với chúng tôi",
+    "contactDesc": "Bạn có thắc mắc về dịch vụ của chúng tôi? Chúng tôi luôn sẵn sàng giúp đỡ! Đội ngũ của chúng tôi sẽ giải đáp mọi thắc mắc của bạn.",
+    "step1Title": "Sao chép URL",
+    "step1Desc": "Đầu tiên, truy cập ứng dụng hoặc trang web Instagram/Facebook và lấy liên kết của video, reels, carousel hoặc nội dung bạn muốn sao chép.",
+    "step2Title": "Dán liên kết",
+    "step2Desc": "Quay lại trang web, dán liên kết vào ô nhập liệu ở phía trên màn hình và nhấp vào nút \"Tải xuống\".",
+    "step3Title": "Tải xuống",
+    "step3Desc": "Trong giây lát, bạn sẽ nhận được danh sách kết quả với các tùy chọn chất lượng khác nhau. Chọn tùy chọn phù hợp nhất với nhu cầu của bạn và tải xuống.",
+    "videoInfo": {
+        "duration": "Thời lượng",
+        "quality": "Chất lượng"
+    },
+    "footer": {
+        "disclaimer": "Chúng tôi không liên kết với Instagram hoặc Meta",
+        "copyright": "© 2024 InstaSave. Bảo lưu mọi quyền"
+    }
+} 

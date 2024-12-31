@@ -1,0 +1,35 @@
+{
+    "downloadTitle": "Descargar videos de",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "youtube": "YouTube",
+    "pasteUrl": "Pega la URL del video aquí",
+    "downloadBtn": "Descargar",
+    "pasteBtn": "Pegar",
+    "howToTitle": "¿Cómo descargar videos de Instagram/Facebook?",
+    "features": "Características",
+    "storySaver": "Guardador de Historias",
+    "reelsDownloader": "Descargador de Reels",
+    "videoDownloader": "Descargador de Videos",
+    "photoDownloader": "Descargador de Fotos",
+    "about": "Acerca de",
+    "contactUs": "Contáctenos",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "getInTouch": "Ponte en Contacto",
+    "contactDesc": "¿Tienes preguntas sobre nuestros servicios? ¡Estamos aquí para ayudar! Nuestro equipo está listo para asistirte con cualquier consulta que tengas.",
+    "step1Title": "Copiar la URL",
+    "step1Desc": "Para comenzar, accede a la aplicación o sitio web de Instagram/Facebook y obtén el enlace del video, reels, carrusel o contenido que deseas copiar.",
+    "step2Title": "Pegar el enlace",
+    "step2Desc": "Regresa al sitio web, pega el enlace en el campo de entrada en la parte superior de la pantalla y haz clic en el botón \"Descargar\".",
+    "step3Title": "Descargar",
+    "step3Desc": "En poco tiempo, recibirás una lista de resultados que ofrecen varias opciones de calidad. Elige la opción que mejor se adapte a tus necesidades y descárgala.",
+    "videoInfo": {
+        "duration": "Duración",
+        "quality": "Calidad"
+    },
+    "footer": {
+        "disclaimer": "No estamos afiliados con Instagram o Meta",
+        "copyright": "© 2024 InstaSave. Todos los derechos reservados"
+    }
+} 

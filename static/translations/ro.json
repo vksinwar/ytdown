@@ -1,0 +1,35 @@
+{
+    "downloadTitle": "Descarcă videoclipuri de pe",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "youtube": "YouTube",
+    "pasteUrl": "Lipește URL-ul videoclipului aici",
+    "downloadBtn": "Descarcă",
+    "pasteBtn": "Lipește",
+    "howToTitle": "Cum să descarci videoclipuri de pe Instagram/Facebook?",
+    "features": "Funcții",
+    "storySaver": "Salvare Stories",
+    "reelsDownloader": "Descărcare Reels",
+    "videoDownloader": "Descărcare Video",
+    "photoDownloader": "Descărcare Poze",
+    "about": "Despre noi",
+    "contactUs": "Contact",
+    "privacyPolicy": "Politica de confidențialitate",
+    "termsOfService": "Termeni și condiții",
+    "getInTouch": "Contactează-ne",
+    "contactDesc": "Ai întrebări despre serviciile noastre? Suntem aici să te ajutăm! Echipa noastră este pregătită să răspundă la toate întrebările tale.",
+    "step1Title": "Copiază URL-ul",
+    "step1Desc": "Pentru început, accesează aplicația sau site-ul Instagram/Facebook și obține link-ul videoclipului, reels-ului, carousel-ului sau conținutului pe care dorești să îl copiezi.",
+    "step2Title": "Lipește link-ul",
+    "step2Desc": "Revino pe site, lipește link-ul în câmpul de introducere din partea de sus a ecranului și apasă butonul \"Descarcă\".",
+    "step3Title": "Descarcă",
+    "step3Desc": "În scurt timp, vei primi o listă de rezultate cu diferite opțiuni de calitate. Alege opțiunea care se potrivește cel mai bine nevoilor tale și descarcă.",
+    "videoInfo": {
+        "duration": "Durată",
+        "quality": "Calitate"
+    },
+    "footer": {
+        "disclaimer": "Nu suntem afiliați cu Instagram sau Meta",
+        "copyright": "© 2024 InstaSave. Toate drepturile rezervate"
+    }
+} 

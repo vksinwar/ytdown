@@ -1,0 +1,35 @@
+{
+    "downloadTitle": "下载视频从",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "youtube": "YouTube",
+    "pasteUrl": "在此粘贴视频网址",
+    "downloadBtn": "下载",
+    "pasteBtn": "粘贴",
+    "howToTitle": "如何从Instagram/Facebook下载视频？",
+    "features": "功能",
+    "storySaver": "故事保存器",
+    "reelsDownloader": "Reels下载器",
+    "videoDownloader": "视频下载器",
+    "photoDownloader": "照片下载器",
+    "about": "关于",
+    "contactUs": "联系我们",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "getInTouch": "联系我们",
+    "contactDesc": "对我们的服务有疑问？我们随时为您提供帮助！我们的团队准备好回答您的任何问题。",
+    "step1Title": "复制URL",
+    "step1Desc": "首先，访问Instagram/Facebook应用程序或网站，获取您想要复制的视频、Reels、轮播或内容的链接。",
+    "step2Title": "粘贴链接",
+    "step2Desc": "返回网站，将链接粘贴到屏幕顶部的输入框中，然后点击"下载"按钮。",
+    "step3Title": "下载",
+    "step3Desc": "很快，您就会收到提供各种质量选项的结果列表。选择最适合您需求的选项并下载。",
+    "videoInfo": {
+        "duration": "时长",
+        "quality": "质量"
+    },
+    "footer": {
+        "disclaimer": "我们与Instagram或Meta没有任何关联",
+        "copyright": "© 2024 InstaSave. 保留所有权利"
+    }
+} 

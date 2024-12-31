@@ -1,0 +1,35 @@
+{
+    "downloadTitle": "Download video's van",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "youtube": "YouTube",
+    "pasteUrl": "Plak hier de video-URL",
+    "downloadBtn": "Download",
+    "pasteBtn": "Plakken",
+    "howToTitle": "Hoe download je video's van Instagram/Facebook?",
+    "features": "Functies",
+    "storySaver": "Story Opslaan",
+    "reelsDownloader": "Reels Downloader",
+    "videoDownloader": "Video Downloader",
+    "photoDownloader": "Foto Downloader",
+    "about": "Over ons",
+    "contactUs": "Contact",
+    "privacyPolicy": "Privacybeleid",
+    "termsOfService": "Servicevoorwaarden",
+    "getInTouch": "Neem Contact Op",
+    "contactDesc": "Heb je vragen over onze diensten? Wij zijn er om te helpen! Ons team staat klaar om al je vragen te beantwoorden.",
+    "step1Title": "Kopieer de URL",
+    "step1Desc": "Ga eerst naar de Instagram/Facebook-app of website en haal de link op van de video, reels, carousel of content die je wilt kopiëren.",
+    "step2Title": "Plak de link",
+    "step2Desc": "Ga terug naar de website, plak de link in het invoerveld bovenaan het scherm en klik op de \"Download\" knop.",
+    "step3Title": "Download",
+    "step3Desc": "Je krijgt snel een lijst met resultaten die verschillende kwaliteitsopties bieden. Kies de optie die het beste bij je wensen past en download deze.",
+    "videoInfo": {
+        "duration": "Duur",
+        "quality": "Kwaliteit"
+    },
+    "footer": {
+        "disclaimer": "Wij zijn niet gelieerd aan Instagram of Meta",
+        "copyright": "© 2024 InstaSave. Alle rechten voorbehouden"
+    }
+} 

@@ -1,0 +1,22 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <h1>Video Downloader</h1>
+    <div>
+        <label for="url">Enter Video URL:</label>
+        <input type="text" id="url" name="url">
+        <button onclick="downloadVideo()">Download</button>
+    </div>
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+        <div id="progress-message"></div>
+    </div>
+</body>
+</html>

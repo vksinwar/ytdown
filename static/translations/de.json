@@ -1,0 +1,35 @@
+{
+    "downloadTitle": "Videos herunterladen von",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "youtube": "YouTube",
+    "pasteUrl": "Video-URL hier einfügen",
+    "downloadBtn": "Herunterladen",
+    "pasteBtn": "Einfügen",
+    "howToTitle": "Wie lädt man Videos von Instagram/Facebook herunter?",
+    "features": "Funktionen",
+    "storySaver": "Story-Speicher",
+    "reelsDownloader": "Reels-Downloader",
+    "videoDownloader": "Video-Downloader",
+    "photoDownloader": "Foto-Downloader",
+    "about": "Über uns",
+    "contactUs": "Kontakt",
+    "privacyPolicy": "Datenschutz",
+    "termsOfService": "Nutzungsbedingungen",
+    "getInTouch": "Kontaktieren Sie uns",
+    "contactDesc": "Haben Sie Fragen zu unseren Diensten? Wir sind hier, um zu helfen! Unser Team steht bereit, Ihre Anfragen zu beantworten.",
+    "step1Title": "URL kopieren",
+    "step1Desc": "Öffnen Sie zunächst die Instagram/Facebook-App oder -Website und kopieren Sie den Link zum gewünschten Video, Reels oder Inhalt.",
+    "step2Title": "Link einfügen",
+    "step2Desc": "Kehren Sie zur Website zurück, fügen Sie den Link in das Eingabefeld oben auf dem Bildschirm ein und klicken Sie auf \"Herunterladen\".",
+    "step3Title": "Herunterladen",
+    "step3Desc": "In Kürze erhalten Sie eine Liste mit verschiedenen Qualitätsoptionen. Wählen Sie die Option, die Ihren Anforderungen am besten entspricht, und laden Sie sie herunter.",
+    "videoInfo": {
+        "duration": "Dauer",
+        "quality": "Qualität"
+    },
+    "footer": {
+        "disclaimer": "Wir sind nicht mit Instagram oder Meta verbunden",
+        "copyright": "© 2024 InstaSave. Alle Rechte vorbehalten"
+    }
+} 

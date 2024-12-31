@@ -1,0 +1,679 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="theme-color" content="#0095f6">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta http-equiv="content-language" content="en">
+        <link rel="alternate" hreflang="en" href="https://instasave.world/" />
+        <link rel="alternate" hreflang="hi" href="https://instasave.world/hi/" />
+        <link rel="alternate" hreflang="id" href="https://instasave.world/id/" />
+        <link rel="alternate" hreflang="pt" href="https://instasave.world/pt/" />
+        <link rel="alternate" hreflang="es" href="https://instasave.world/es/" />
+        <link rel="alternate" hreflang="x-default" href="https://instasave.world/" />
+        <meta name="description" content="Instagram reels download without watermark. Best tool for download instagram reels, instagram video download, and reels download. Free Instagram downloader for videos, stories, and photos in HD quality.">
+        <meta name="keywords" content="instagram reels download, download instagram reels, reels download, download instagram video, instagram downloader, instagram video download">
+        <meta property="og:title" content="InstaSave - Instagram Reels Download | Download Instagram Videos">
+        <meta property="og:description" content="Download Instagram reels and videos without watermark. Best Instagram reels downloader and video saver. Save Instagram content in HD quality for free.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://instasave.world">
+        <link rel="preconnect" href="https://code.jquery.com">
+        <link rel="dns-prefetch" href="https://code.jquery.com">
+        <title>InstaSave - Social Media Video Downloader</title>
+        <link rel="stylesheet" href="/static/styles.css" media="print" onload="this.media='all'">
+        <link rel="shortcut icon" href="/static/favicon.ico">
+        <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png">
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" defer></script>
+        <script src="/static/script.js" defer></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('[data-scroll-to]').forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        const targetId = this.getAttribute('data-scroll-to');
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            e.preventDefault();
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                            // Update URL after scrolling without triggering a new scroll
+                            setTimeout(() => {
+                                window.location.hash = this.getAttribute('href').substring(1);
+                            }, 800);
+                        }
+                    });
+                });
+                const section = '{{ section | default("") }}';
+                if (section) {
+                    const sectionToShow = document.getElementById(section);
+                    if (sectionToShow) {
+                        sectionToShow.style.display = 'block';
+                        sectionToShow.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "InstaSave",
+            "url": "https://instasave.world",
+            "description": "Instagram reels download service. Download Instagram videos and reels without watermark. Free online tool to save Instagram content.",
+            "applicationCategory": "Multimedia",
+            "operatingSystem": "Any",
+            "offers": {
+                "@type": "Offer",
+                "price": "0"
+            }
+        }
+        </script>
+        <link rel="canonical" href="https://instasave.world" />
+        <meta name="description" lang="hi" content="इंस्टाग्राम रील्स डाउनलोड बिना वॉटरमार्क के। रील्स, वीडियो और स्टोरी डाउनलोड करें HD क्वालिटी में।">
+        <meta name="description" lang="id" content="Download reels Instagram tanpa watermark. Unduh video dan cerita Instagram dengan kualitas HD.">
+        <meta name="description" lang="pt" content="Baixe reels do Instagram sem marca d'água. Faça download de vídeos e stories em alta qualidade.">
+        <meta name="description" lang="es" content="Descarga reels de Instagram sin marca de agua. Descarga videos e historias en alta calidad.">
+</head>
+<body>
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <div class="logo">
+                        <a href="/" aria-label="Home">
+                            <img src="/static/logo.svg" alt="InstaSave Logo" width="120" height="36" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="nav__links">
+                        <a href="/video-downloader" class="nav__link">VIDEO DOWNLOADER</a>
+                        <a href="/short-downloader" class="nav__link">SHORT DOWNLOADER</a>
+                        <a href="/reels-downloader" class="nav__link">REELS DOWNLOADER</a>
+                        <a href="/story-downloader" class="nav__link">STORY DOWNLOADER</a>
+                        <a href="/highlights-downloader" class="nav__link">HIGHLIGHTS DOWNLOADER</a>
+                    </div>
+                    <div class="language-selector">
+                        <button id="language-select-btn" class="language-select-btn" aria-label="Select Language">
+                            <span id="current-language">English</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <div id="language-dropdown" class="language-dropdown" style="display: none;">
+                            <div class="language-grid">
+                                <div class="language-column">
+                                    <button onclick="changeLanguage('ar')" class="language-option">
+                                        <img src="/static/flags/ar.svg" alt="Arabic"> <span>العربية</span>
+                                    </button>
+                                    <button onclick="changeLanguage('cs')" class="language-option">
+                                        <img src="/static/flags/cs.svg" alt="Czech"> <span>Čeština</span>
+                                    </button>
+                                    <button onclick="changeLanguage('el')" class="language-option">
+                                        <img src="/static/flags/el.svg" alt="Greek"> <span>Ελληνικά</span>
+                                    </button>
+                                    <button onclick="changeLanguage('es')" class="language-option">
+                                        <img src="/static/flags/es.svg" alt="Spanish"> <span>Español</span>
+                                    </button>
+                                    <button onclick="changeLanguage('fr')" class="language-option">
+                                        <img src="/static/flags/fr.svg" alt="French"> <span>Français</span>
+                                    </button>
+                                    <button onclick="changeLanguage('hu')" class="language-option">
+                                        <img src="/static/flags/hu.svg" alt="Hungarian"> <span>Magyar</span>
+                                    </button>
+                                    <button onclick="changeLanguage('it')" class="language-option">
+                                        <img src="/static/flags/it.svg" alt="Italian"> <span>Italiano</span>
+                                    </button>
+                                    <button onclick="changeLanguage('ko')" class="language-option">
+                                        <img src="/static/flags/ko.svg" alt="Korean"> <span>한국어</span>
+                                    </button>
+                                    <button onclick="changeLanguage('nl')" class="language-option">
+                                        <img src="/static/flags/nl.svg" alt="Dutch"> <span>Nederlands</span>
+                                    </button>
+                                    <button onclick="changeLanguage('pt')" class="language-option">
+                                        <img src="/static/flags/pt.svg" alt="Portuguese"> <span>Português</span>
+                                    </button>
+                                    <button onclick="changeLanguage('ru')" class="language-option">
+                                        <img src="/static/flags/ru.svg" alt="Russian"> <span>Русский</span>
+                                    </button>
+                                    <button onclick="changeLanguage('sr')" class="language-option">
+                                        <img src="/static/flags/sr.svg" alt="Serbian"> <span>Српски</span>
+                                    </button>
+                                    <button onclick="changeLanguage('th')" class="language-option">
+                                        <img src="/static/flags/th.svg" alt="Thai"> <span>ไทย</span>
+                                    </button>
+                                    <button onclick="changeLanguage('vi')" class="language-option">
+                                        <img src="/static/flags/vi.svg" alt="Vietnamese"> <span>Tiếng Việt</span>
+                                    </button>
+                                </div>
+                                <div class="language-column">
+                                    <button onclick="changeLanguage('bn')" class="language-option">
+                                        <img src="/static/flags/bn.svg" alt="Bengali"> <span>বাংলা</span>
+                                    </button>
+                                    <button onclick="changeLanguage('de')" class="language-option">
+                                        <img src="/static/flags/de.svg" alt="German"> <span>Deutsch</span>
+                                    </button>
+                                    <button onclick="changeLanguage('en')" class="language-option">
+                                        <img src="/static/flags/en.svg" alt="English"> <span>English</span>
+                                    </button>
+                                    <button onclick="changeLanguage('fa')" class="language-option">
+                                        <img src="/static/flags/fa.svg" alt="Persian"> <span>فارسی</span>
+                                    </button>
+                                    <button onclick="changeLanguage('hi')" class="language-option">
+                                        <img src="/static/flags/in.svg" alt="Hindi"> <span>हिन्दी</span>
+                                    </button>
+                                    <button onclick="changeLanguage('id')" class="language-option">
+                                        <img src="/static/flags/id.svg" alt="Indonesian"> <span>Bahasa Indonesia</span>
+                                    </button>
+                                    <button onclick="changeLanguage('ja')" class="language-option">
+                                        <img src="/static/flags/jp.svg" alt="Japanese"> <span>日本語</span>
+                                    </button>
+                                    <button onclick="changeLanguage('ms')" class="language-option">
+                                        <img src="/static/flags/my.svg" alt="Malay"> <span>Bahasa Melayu</span>
+                                    </button>
+                                    <button onclick="changeLanguage('pl')" class="language-option">
+                                        <img src="/static/flags/pl.svg" alt="Polish"> <span>Polski</span>
+                                    </button>
+                                    <button onclick="changeLanguage('ro')" class="language-option">
+                                        <img src="/static/flags/ro.svg" alt="Romanian"> <span>Română</span>
+                                    </button>
+                                    <button onclick="changeLanguage('sk')" class="language-option">
+                                        <img src="/static/flags/sk.svg" alt="Slovak"> <span>Slovenčina</span>
+                                    </button>
+                                    <button onclick="changeLanguage('sv')" class="language-option">
+                                        <img src="/static/flags/se.svg" alt="Swedish"> <span>Svenska</span>
+                                    </button>
+                                    <button onclick="changeLanguage('tr')" class="language-option">
+                                        <img src="/static/flags/tr.svg" alt="Turkish"> <span>Türkçe</span>
+                                    </button>
+                                    <button onclick="changeLanguage('zh')" class="language-option">
+                                        <img src="/static/flags/cn.svg" alt="Chinese"> <span>中文</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section class="form-block" id="form-block">
+                <div class="form-block__wrapper">
+                    <!-- Title and Subtitle -->
+                    <div class="form-block__content">
+                        <div class="title-wrapper">
+                            <h1 class="form-block__content-subtitle">
+                                <span data-i18n="downloadTitle">Download Videos from</span>
+                                <span class="platform-names">
+                                    <span class="instagram" data-i18n="instagram">Instagram</span>,
+                                    <span class="facebook" data-i18n="facebook">Facebook</span>,
+                                    <span class="youtube" data-i18n="youtube">YouTube</span>
+                                </span>
+                                & More
+                            </h1>
+                        </div>
+                    </div>
+
+                    <!-- Search Form -->
+                    <form class="search-form" onsubmit="return false" role="search">
+                        <div class="search-form__field">
+                            <label for="url" class="visually-hidden"></label>
+                            <input 
+                                type="text" 
+                                id="url" 
+                                data-i18n="pasteUrl" 
+                                placeholder="Paste your video URL here" 
+                                class="search-form__input"
+                                aria-label="URL input"
+                                autocomplete="off"
+                                autocorrect="off"
+                                autocapitalize="off"
+                                spellcheck="false"
+                            >
+                            <div class="search-form__actions">
+                                <button class="search-form__action-btn paste-btn" type="button" aria-label="Paste">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M8 9.1875C8 7.98129 8.98133 7 10.1875 7H15.5V4.1875..." fill="currentColor"/>
+                                    </svg>
+                                    <span data-i18n="pasteBtn">Paste</span>
+                                </button>
+                                <button class="search-form__action-btn download-btn" onclick="downloadVideo()" aria-label="Download">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/>
+                                    </svg>
+                                    <span data-i18n="downloadBtn">Download</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Progress and Results -->
+                    <div class="progress-container" id="progress-container" hidden aria-live="polite">
+                        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" id="progress-bar"></div>
+                        </div>
+                        <p class="progress-text" id="progress-text"></p>
+                    </div>
+
+                    <div class="video-info" id="video-info" style="display: none;" aria-live="polite">
+                        <div class="video-info__card">
+                            <div class="video-info__thumbnail">
+                                <img id="video-thumbnail" src="" alt="">
+                            </div>
+                            <div class="video-info__details">
+                                <h3 id="video-title"></h3>
+                                <p><span id="video-duration"></span></p>
+                                <p><span id="video-quality"></span></p>
+                                <button class="download-button" onclick="startDownload()">
+                                    <svg width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                                    </svg>
+                                    Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-section" id="contact-section" style="display: none;">
+                <div class="container">
+                    <div class="contact-wrapper">
+                        <div class="contact-content">
+                            <h2 class="contact-title">Get in Touch</h2>
+                            <p class="contact-description">
+                                Have questions about our services? We're here to help! Our team is ready to assist you with any inquiries you might have.
+                            </p>
+                            <div class="contact-method">
+                                <svg class="contact-icon" viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                                <a href="mailto:contact@instasave.world" class="contact-email">contact@instasave.world</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="how-to">
+                <div class="container">
+                    <h2 class="how-to__title">How to download video from Instagram/Facebook?</h2>
+                    <div class="how-to__steps">
+                        <!-- Step 1 -->
+                        <div class="how-to__step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <div class="step-icon">
+                                    <svg class="icon-copy" viewBox="0 0 24 24">
+                                        <path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8C6.9 5 6 5.9 6 7v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                                    </svg>
+                                </div>
+                                <div class="step-info">
+                                    <h3>Copy the URL</h3>
+                                    <p>To get started, access either Instagram/Facebook app or website and retrieve the link to the specific video, reels, carousel, or content that you want to copy.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="how-to__step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <div class="step-icon">
+                                    <svg class="icon-paste" viewBox="0 0 24 24">
+                                        <path d="M19 2h-4.18C14.4.84 13.3 0 12 0c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm7 20H5V4h2v3h10V4h2v18z"/>
+                                    </svg>
+                                </div>
+                                <div class="step-info">
+                                    <h3>Paste the link</h3>
+                                    <p>Return to the website, paste the link into the input field at the top of the screen and click the "Download" button.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="how-to__step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <div class="step-icon">
+                                    <svg class="icon-download" viewBox="0 0 24 24">
+                                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                                    </svg>
+                                </div>
+                                <div class="step-info">
+                                    <h3>Download</h3>
+                                    <p>In no time at all, you'll receive a list of results that offer various quality options. Choose the option that best suits your requirements and download it.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq-section">
+                <div class="container">
+                    <h2 class="faq-title">Frequently Asked Questions (FAQ)</h2>
+                    <p class="faq-subtitle">Get answers about downloading from Instagram, Facebook, and YouTube using InstaSave. Learn how to save Reels, Stories, Facebook videos, and YouTube content in HD quality. Can't find what you're looking for? Contact us for help!</p>
+                    
+                    <div class="faq-list">
+                        <!-- FAQ Item 1 -->
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What is an Instagram Video Downloader?</span>
+                                <svg class="faq-icon" viewBox="0 0 24 24">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>InstaSave is a web-based tool that allows you to download videos, reels, and stories from Instagram. It's designed to be user-friendly and doesn't require any software installation.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Which file formats are supported for downloading?</span>
+                                <svg class="faq-icon" viewBox="0 0 24 24">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We support downloading in multiple formats including:</p>
+                                <ul>
+                                    <li>MP4 for videos</li>
+                                    <li>JPG/PNG for images</li>
+                                    <li>MP3 for audio extraction</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Which devices are compatible with InstaSave?</span>
+                                <svg class="faq-icon" viewBox="0 0 24 24">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>InstaSave works on all devices with a web browser, including:</p>
+                                <ul>
+                                    <li>Desktop computers (Windows, Mac, Linux)</li>
+                                    <li>Mobile phones (iOS, Android)</li>
+                                    <li>Tablets and iPads</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Is there a limit on the number of downloads?</span>
+                                <svg class="faq-icon" viewBox="0 0 24 24">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>No, there's no limit on the number of videos you can download. Our service is completely free and unlimited.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 5 -->
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What is the maximum quality of downloads?</span>
+                                <svg class="faq-icon" viewBox="0 0 24 24">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We provide the highest quality available from the source:</p>
+                                <ul>
+                                    <li>Videos: Up to 4K quality (if available)</li>
+                                    <li>Images: Original resolution</li>
+                                    <li>Stories: Best available quality</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 6 -->
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How to download Instagram Reels without watermark?</span>
+                                <svg class="faq-icon" viewBox="0 0 24 24">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>To download Instagram Reels without watermark using InstaSave:</p>
+                                <ol>
+                                    <li>Copy the Reels URL from Instagram</li>
+                                    <li>Paste it into InstaSave's download box</li>
+                                    <li>Click download to get your watermark-free Reels video</li>
+                                </ol>
+                                <p>Our tool ensures high-quality downloads while removing the Instagram watermark automatically.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 7 -->
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Can I download Facebook videos using InstaSave?</span>
+                                <svg class="faq-icon" viewBox="0 0 24 24">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes! InstaSave supports Facebook video downloads from:</p>
+                                <ul>
+                                    <li>Facebook public posts</li>
+                                    <li>Facebook Watch videos</li>
+                                    <li>Facebook Reels</li>
+                                    <li>Facebook Stories (while they're active)</li>
+                                </ul>
+                                <p>Simply copy the Facebook video URL and paste it into our downloader to save in HD quality.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 8 -->
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How to save YouTube videos in different qualities?</span>
+                                <svg class="faq-icon" viewBox="0 0 24 24">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>InstaSave offers multiple quality options for YouTube downloads:</p>
+                                <ul>
+                                    <li>4K (2160p) Ultra HD quality</li>
+                                    <li>1080p Full HD</li>
+                                    <li>720p HD</li>
+                                    <li>480p and 360p for smaller file sizes</li>
+                                    <li>Audio-only MP3 format</li>
+                                </ul>
+                                <p>After pasting the YouTube URL, you'll see all available quality options for your video.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 9 -->
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Is it safe to download using InstaSave?</span>
+                                <svg class="faq-icon" viewBox="0 0 24 24">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes, InstaSave is completely safe to use:</p>
+                                <ul>
+                                    <li>No software installation required</li>
+                                    <li>No registration needed</li>
+                                    <li>Secure HTTPS connection</li>
+                                    <li>No personal data collection</li>
+                                    <li>Ad-free experience</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 10 -->
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How to download Instagram Stories anonymously?</span>
+                                <svg class="faq-icon" viewBox="0 0 24 24">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>InstaSave allows you to download Instagram Stories without the creator knowing:</p>
+                                <ol>
+                                    <li>Copy the profile URL or username</li>
+                                    <li>Paste it into InstaSave</li>
+                                    <li>Select the story you want to download</li>
+                                    <li>Download anonymously in original quality</li>
+                                </ol>
+                                <p>The story owner won't know you've downloaded their content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="privacy-section" id="privacy-section" style="display: none;">
+                <div class="container">
+                    <div class="privacy-wrapper">
+                        <h1 class="privacy-title">Privacy Policy</h1>
+                        <p class="privacy-date">Last updated: March-2024</p>
+                        
+                        <div class="privacy-content">
+                            <p>This Privacy Policy outlines our practices and procedures regarding the collection, use, and disclosure of your information when you use our service. It also explains your privacy rights and how the law protects you.</p>
+                            
+                            <p>We utilize your personal data to provide and enhance the service. By using the service, you agree to the collection and use of information in accordance with this Privacy Policy.</p>
+                            
+                            <h2>Interpretation and Definitions</h2>
+                            <h3>Interpretation</h3>
+                            <p>Terms with capitalized initials have defined meanings specified under certain conditions. These definitions hold the same meaning regardless of whether they are singular or plural.</p>
+                            
+                            <h3>Definitions</h3>
+                            <p>For the purposes of this Privacy Policy:</p>
+                            <ul>
+                                <li><strong>Business</strong> refers to the legal entity, InstaSave, that collects consumers' personal information and determines the purposes and means of the processing of such information.</li>
+                                <li><strong>Company</strong> refers to InstaSave, located in the United States, and may be referred to as "We," "Us," or "Our" in this Policy.</li>
+                                <li><strong>Service</strong> refers to the website, InstaSave.</li>
+                                <li><strong>Website</strong> refers to InstaSave, accessible from https://instasave.world</li>
+                            </ul>
+                            
+                            <h2>Information Collection</h2>
+                            <p>We collect minimal information necessary to provide our service:</p>
+                            <ul>
+                                <li>Usage Data (IP address, browser type, device information)</li>
+                                <li>Video URLs you submit for downloading</li>
+                                <li>Technical data necessary for service functionality</li>
+                            </ul>
+                            
+                            <h2>How We Use Your Information</h2>
+                            <p>We use the collected information to:</p>
+                            <ul>
+                                <li>Provide and maintain our service</li>
+                                <li>Monitor and analyze usage patterns</li>
+                                <li>Detect and prevent technical issues</li>
+                                <li>Improve user experience</li>
+                            </ul>
+                            
+                            <h2>Data Security</h2>
+                            <p>We implement industry-standard security measures to protect your information. However, no method of internet transmission is 100% secure. We cannot guarantee absolute security of your data.</p>
+                            
+                            <h2>Cookies</h2>
+                            <p>We use essential cookies to ensure proper functionality of our service. You can control cookie settings through your browser preferences.</p>
+                            
+                            <h2>Third-Party Services</h2>
+                            <p>Our service may contain links to third-party websites. We are not responsible for their privacy practices. We recommend reviewing their privacy policies.</p>
+                            
+                            <h2>Changes to This Policy</h2>
+                            <p>We may update this Privacy Policy periodically. We will notify you of any changes by posting the new policy on this page.</p>
+                            
+                            <h2>Contact Us</h2>
+                            <p>If you have any questions about this Privacy Policy, You can contact us:</p>
+                            <p>By email: <a href="mailto:contact@instasave.world">contact@instasave.world</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="terms-section" id="terms-section" style="display: none;">
+                <div class="container">
+                    <div class="terms-wrapper">
+                        <h1 class="terms-title">Terms and Conditions</h1>
+                        <p class="terms-date">Last updated: March-2024</p>
+                        
+                        <div class="terms-content">
+                            <p>We kindly request you to carefully review the following terms and conditions before utilizing our services.</p>
+                            
+                            <h2>Interpretation and Definitions</h2>
+                            <h3>Interpretation</h3>
+                            <p>The capitalized words used in this document have specific meanings defined under the following conditions. Regardless of their form, these definitions hold the same meaning, whether in singular or plural form.</p>
+                            
+                            <h3>Definitions</h3>
+                            <p>For the purpose of these Terms and Conditions:</p>
+                            <ul>
+                                <li><strong>Company</strong> (referred to as "the Company," "We," "Us," or "Our" in this Agreement) refers to InstaSave.</li>
+                                <li><strong>Service</strong> refers to our website.</li>
+                                <li><strong>Website</strong> refers to InstaSave, accessible at https://instasave.world</li>
+                                <li><strong>You</strong> refers to the individual accessing or using our Service.</li>
+                            </ul>
+                            
+                            <h2>Acknowledgment</h2>
+                            <p>These terms and conditions govern the utilization of our services and establish the agreement between you and the Company. By accessing or using the Service, You agree to be bound by these Terms and Conditions.</p>
+                            
+                            <h2>Links to Other Websites</h2>
+                            <p>Our Service may contain links to third-party websites or services that are not owned or controlled by the Company. The Company assumes no responsibility for the content or practices of any third-party websites.</p>
+                            
+                            <h2>Termination</h2>
+                            <p>We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.</p>
+                            
+                            <h2>Limitation of Liability</h2>
+                            <p>To the maximum extent permitted by applicable law, in no event shall the Company be liable for any special, incidental, indirect, or consequential damages whatsoever arising out of or in connection with your use of our Service.</p>
+                            
+                            <h2>Disclaimer</h2>
+                            <p>The Service is provided to You "AS IS" and "AS AVAILABLE" without warranty of any kind. The Company does not warrant that the Service will be uninterrupted or error-free.</p>
+                            
+                            <h2>Changes to These Terms</h2>
+                            <p>We reserve the right to modify these Terms at any time. We will notify you of any material changes by posting the new Terms on this page.</p>
+                            
+                            <h2>Contact Us</h2>
+                            <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
+                            <p>By email: <a href="mailto:contact@instasave.world">contact@instasave.world</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__nav">
+                    <nav class="footer__nav-grid footer__nav-grid--secondary">
+                        <a href="#how-to-photos" class="footer__nav-link">HOW TO DOWNLOAD INSTAGRAM REELS</a>
+                        <a href="#how-to-videos" class="footer__nav-link">HOW TO DOWNLOAD INSTAGRAM VIDEOS</a>
+                    </nav>
+                    <nav class="footer__nav-grid footer__nav-grid--tertiary">
+                        <a href="/about" class="footer__nav-link">ABOUT</a>
+                        <a href="/privacy" class="footer__nav-link">PRIVACY POLICY</a>
+                    </nav>
+                </div>
+
+                <div class="footer__brand">
+                    <img src="/static/logo.svg" alt="InstaSave Logo" class="footer__logo" width="180" height="40">
+                    <p class="footer__copyright">© 2020-2025 InstaSave. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Add noscript fallback -->
+        <noscript>
+            <link rel="stylesheet" href="/static/styles.css">
+        </noscript>
+</body>
+</html>

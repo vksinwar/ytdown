@@ -1,0 +1,35 @@
+{
+    "downloadTitle": "動画をダウンロード",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "youtube": "YouTube",
+    "pasteUrl": "ここに動画URLを貼り付け",
+    "downloadBtn": "ダウンロード",
+    "pasteBtn": "貼り付け",
+    "howToTitle": "Instagram/Facebookから動画をダウンロードする方法",
+    "features": "機能",
+    "storySaver": "ストーリー保存",
+    "reelsDownloader": "リールダウンローダー",
+    "videoDownloader": "動画ダウンローダー",
+    "photoDownloader": "写真ダウンローダー",
+    "about": "概要",
+    "contactUs": "お問い合わせ",
+    "privacyPolicy": "プライバシーポリシー",
+    "termsOfService": "利用規約",
+    "getInTouch": "お問い合わせ",
+    "contactDesc": "サービスについてご質問がありますか？お手伝いさせていただきます！当チームがご質問にお答えいたします。",
+    "step1Title": "URLをコピー",
+    "step1Desc": "まず、InstagramまたはFacebookのアプリやウェブサイトにアクセスし、ダウンロードしたい動画、リール、カルーセル、またはコンテンツのリンクを取得します。",
+    "step2Title": "リンクを貼り付け",
+    "step2Desc": "ウェブサイトに戻り、画面上部の入力フィールドにリンクを貼り付け、「ダウンロード」ボタンをクリックします。",
+    "step3Title": "ダウンロード",
+    "step3Desc": "すぐに、様々な品質オプションを提供する結果一覧が表示されます。ご要望に最適なオプションを選択してダウンロードしてください。",
+    "videoInfo": {
+        "duration": "再生時間",
+        "quality": "品質"
+    },
+    "footer": {
+        "disclaimer": "当サイトはInstagramやMetaとは提携していません",
+        "copyright": "© 2024 InstaSave. All rights reserved"
+    }
+} 

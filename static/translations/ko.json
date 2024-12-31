@@ -1,0 +1,35 @@
+{
+    "downloadTitle": "동영상 다운로드",
+    "instagram": "인스타그램",
+    "facebook": "페이스북",
+    "youtube": "유튜브",
+    "pasteUrl": "동영상 URL을 여기에 붙여넣기",
+    "downloadBtn": "다운로드",
+    "pasteBtn": "붙여넣기",
+    "howToTitle": "인스타그램/페이스북 동영상 다운로드 방법",
+    "features": "기능",
+    "storySaver": "스토리 저장",
+    "reelsDownloader": "릴스 다운로더",
+    "videoDownloader": "동영상 다운로더",
+    "photoDownloader": "사진 다운로더",
+    "about": "소개",
+    "contactUs": "문의하기",
+    "privacyPolicy": "개인정보 처리방침",
+    "termsOfService": "서비스 이용약관",
+    "getInTouch": "연락하기",
+    "contactDesc": "서비스에 대해 궁금하신 점이 있으신가요? 저희가 도와드리겠습니다! 문의하시면 친절히 답변해 드리겠습니다.",
+    "step1Title": "URL 복사",
+    "step1Desc": "먼저 인스타그램/페이스북 앱이나 웹사이트에 접속하여 다운로드하고 싶은 동영상, 릴스, 캐러셀 또는 콘텐츠의 링크를 복사하세요.",
+    "step2Title": "링크 붙여넣기",
+    "step2Desc": "웹사이트로 돌아와서 화면 상단의 입력란에 링크를 붙여넣고 \"다운로드\" 버튼을 클릭하세요.",
+    "step3Title": "다운로드",
+    "step3Desc": "곧바로 다양한 화질 옵션을 제공하는 결과 목록이 표시됩니다. 원하는 옵션을 선택하여 다운로드하세요.",
+    "videoInfo": {
+        "duration": "재생 시간",
+        "quality": "화질"
+    },
+    "footer": {
+        "disclaimer": "본 서비스는 Instagram 또는 Meta와 관련이 없습니다",
+        "copyright": "© 2024 InstaSave. 모든 권리 보유"
+    }
+} 

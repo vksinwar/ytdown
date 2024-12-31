@@ -1,0 +1,35 @@
+{
+    "downloadTitle": "Video İndir",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "youtube": "YouTube",
+    "pasteUrl": "Video URL'sini buraya yapıştırın",
+    "downloadBtn": "İndir",
+    "pasteBtn": "Yapıştır",
+    "howToTitle": "Instagram/Facebook'tan video nasıl indirilir?",
+    "features": "Özellikler",
+    "storySaver": "Hikaye Kaydedici",
+    "reelsDownloader": "Reels İndirici",
+    "videoDownloader": "Video İndirici",
+    "photoDownloader": "Fotoğraf İndirici",
+    "about": "Hakkında",
+    "contactUs": "İletişim",
+    "privacyPolicy": "Gizlilik Politikası",
+    "termsOfService": "Kullanım Şartları",
+    "getInTouch": "Bizimle İletişime Geçin",
+    "contactDesc": "Hizmetlerimiz hakkında sorularınız mı var? Yardıma hazırız! Ekibimiz tüm sorularınızı yanıtlamak için bekliyor.",
+    "step1Title": "URL'yi Kopyala",
+    "step1Desc": "Başlamak için, Instagram/Facebook uygulamasına veya web sitesine erişin ve kopyalamak istediğiniz video, reels, carousel veya içeriğin bağlantısını alın.",
+    "step2Title": "Bağlantıyı Yapıştır",
+    "step2Desc": "Web sitesine geri dönün, bağlantıyı ekranın üst kısmındaki giriş alanına yapıştırın ve \"İndir\" düğmesine tıklayın.",
+    "step3Title": "İndir",
+    "step3Desc": "Kısa süre içinde, çeşitli kalite seçenekleri sunan bir sonuç listesi alacaksınız. İhtiyaçlarınıza en uygun seçeneği seçin ve indirin.",
+    "videoInfo": {
+        "duration": "Süre",
+        "quality": "Kalite"
+    },
+    "footer": {
+        "disclaimer": "Instagram veya Meta ile bağlantımız yoktur",
+        "copyright": "© 2024 InstaSave. Tüm hakları saklıdır"
+    }
+} 
