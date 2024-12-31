@@ -7,6 +7,4 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
-      - key: REDIS_URL
-        sync: false
     autoDeploy: true 

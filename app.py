@@ -6,18 +6,19 @@ from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import yt_dlp
-import redis
 import aiofiles
 import asyncio
 from datetime import datetime, timedelta
 import humanize
-from typing import Optional, Callable, TypeVar, ParamSpec
+from typing import Optional, Callable, TypeVar, ParamSpec, Dict
 from fastapi.requests import Request
 from functools import wraps
 
-# Initialize FastAPI and Redis
+# Initialize FastAPI
 app = FastAPI()
-redis_client = redis.Redis(host='localhost', port=6379, db=0, decode_responses=True)
+
+# Simple in-memory cache
+cache: Dict[str, tuple[any, datetime]] = {}
 
 # Mount static files and templates
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -44,11 +45,16 @@ def cache_response(expire_time: int = 300) -> Callable[[Callable[P, T]], Callabl
         async def wrapper(*args: P.args, **kwargs: P.kwargs) -> T:
             cache_key = f"{func.__name__}:{str(args)}:{str(kwargs)}"
             
-            if cached_response := redis_client.get(cache_key):
-                return eval(cached_response)
+            # Check cache
+            if cache_key in cache:
+                cached_value, timestamp = cache[cache_key]
+                if datetime.now() - timestamp < timedelta(seconds=expire_time):
+                    return cached_value
+                else:
+                    del cache[cache_key]
             
             response = await func(*args, **kwargs)
-            redis_client.setex(cache_key, expire_time, str(response))
+            cache[cache_key] = (response, datetime.now())
             return response
         return wrapper
     return decorator
@@ -128,16 +134,9 @@ async def get_video_info(video: VideoURL):
 @app.post("/download")
 async def download_video(video: VideoURL):
     try:
-        # Check cache for recent downloads
-        cache_key = f"download:{video.url}"
-        if redis_client.get(cache_key):
-            return JSONResponse(content={"message": "Video was recently downloaded, please wait before trying again"}, status_code=429)
-
-        if not await is_video_duration_valid(video.url):
+        processor = VideoProcessor(video.url)
+        if not await processor.is_duration_valid():
             raise HTTPException(status_code=400, detail="Video duration should not exceed 2 minutes")
-
-        # Set download flag in cache
-        redis_client.setex(cache_key, 60, "downloading")  # Prevent repeated downloads for 1 minute
 
         progress = {"status": "downloading", "progress": 0}
 
@@ -162,6 +161,4 @@ async def download_video(video: VideoURL):
         return {"message": "Download successful", "progress": progress}
 
     except Exception as e:
-        # Remove download flag if error occurs
-        redis_client.delete(cache_key)
         raise HTTPException(status_code=500, detail=str(e))
