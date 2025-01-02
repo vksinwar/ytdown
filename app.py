@@ -1,37 +1,90 @@
 # app.py
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
 from pydantic import BaseModel
 import yt_dlp
 import aiofiles
 import asyncio
+import io
 from datetime import datetime, timedelta
 import humanize
 from typing import Optional, Callable, TypeVar, ParamSpec, Dict
 from fastapi.requests import Request
 from functools import wraps
+import time
 
 # Initialize FastAPI
 app = FastAPI()
 
-# Simple in-memory cache
-cache: Dict[str, tuple[any, datetime]] = {}
+# Optimize Gzip compression
+app.add_middleware(GZipMiddleware, minimum_size=500)  # Compress responses >= 500 bytes
 
-# Mount static files and templates
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# Mount static files with caching
+app.mount("/static", StaticFiles(directory="static", html=True), name="static")
 templates = Jinja2Templates(directory="templates")
 
-# Enable CORS
+# Enable CORS with specific origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://instasave.world", "http://localhost:8000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Add caching headers middleware
+@app.middleware("http")
+async def add_cache_headers(request: Request, call_next):
+    start_time = time.time()
+    response = await call_next(request)
+    
+    # Add caching for static files
+    if request.url.path.startswith("/static"):
+        response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+        response.headers["Vary"] = "Accept-Encoding"
+    
+    # Add Server-Timing header
+    process_time = time.time() - start_time
+    response.headers["Server-Timing"] = f"total;dur={process_time*1000:.2f}"
+    
+    return response
+
+# Simple in-memory cache with size limit
+MAX_CACHE_ITEMS = 100
+cache: Dict[str, tuple[any, datetime]] = {}
+
+# Cache cleanup function
+async def cleanup_old_cache():
+    while True:
+        try:
+            now = datetime.now()
+            expired_keys = [
+                k for k, v in cache.items() 
+                if now - v[1] > timedelta(minutes=5)
+            ]
+            for k in expired_keys:
+                del cache[k]
+            
+            # Keep cache size in check
+            if len(cache) > MAX_CACHE_ITEMS:
+                oldest_keys = sorted(
+                    cache.keys(), 
+                    key=lambda k: cache[k][1]
+                )[:len(cache) - MAX_CACHE_ITEMS]
+                for k in oldest_keys:
+                    del cache[k]
+                    
+        except Exception:
+            pass
+        await asyncio.sleep(300)  # Run every 5 minutes
+
+@app.on_event("startup")
+async def startup_event():
+    asyncio.create_task(cleanup_old_cache())
 
 class VideoURL(BaseModel):
     url: str
@@ -54,7 +107,10 @@ def cache_response(expire_time: int = 300) -> Callable[[Callable[P, T]], Callabl
                     del cache[cache_key]
             
             response = await func(*args, **kwargs)
-            cache[cache_key] = (response, datetime.now())
+            
+            # Only cache if we haven't exceeded the limit
+            if len(cache) < MAX_CACHE_ITEMS:
+                cache[cache_key] = (response, datetime.now())
             return response
         return wrapper
     return decorator
@@ -65,7 +121,8 @@ class VideoProcessor:
         self.ydl_opts = {
             'quiet': True,
             'format': 'best',
-            'no_warnings': True
+            'no_warnings': True,
+            'socket_timeout': 10,  # Timeout for network operations
         }
     
     async def get_info(self) -> dict:
@@ -138,27 +195,42 @@ async def download_video(video: VideoURL):
         if not await processor.is_duration_valid():
             raise HTTPException(status_code=400, detail="Video duration should not exceed 2 minutes")
 
-        progress = {"status": "downloading", "progress": 0}
-
-        def progress_hook(d):
+        # Get video info first
+        info = await processor.get_info()
+        title = info.get('title', 'video')
+        ext = info.get('ext', 'mp4')
+        
+        def custom_hook(d):
             if d['status'] == 'downloading':
-                progress['progress'] = d.get('_percent_str', '0%')
-                progress['speed'] = d.get('_speed_str', '')
-                progress['eta'] = d.get('_eta_str', '')
+                pass
             elif d['status'] == 'finished':
-                progress['status'] = 'completed'
-                progress['message'] = 'Download completed!'
+                pass
 
         ydl_opts = {
             'format': 'best',
-            'outtmpl': f'downloads/{datetime.now().strftime("%Y%m%d_%H%M%S")}/%(title)s.%(ext)s',
-            'progress_hooks': [progress_hook],
+            'quiet': True,
+            'no_warnings': True,
+            'progress_hooks': [custom_hook],
+            'socket_timeout': 10,
         }
 
-        # Run download in thread pool to not block
-        await asyncio.to_thread(lambda: yt_dlp.YoutubeDL(ydl_opts).download([video.url]))
-        
-        return {"message": "Download successful", "progress": progress}
+        # Download the video
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            info = ydl.extract_info(video.url, download=False)
+            url = info['url']
+            
+            # Create response headers for browser download
+            headers = {
+                'Content-Disposition': f'attachment; filename="{title}.{ext}"',
+                'Cache-Control': 'no-cache'
+            }
+            
+            # Return a streaming response that will download directly in the browser
+            return StreamingResponse(
+                io.BytesIO(await asyncio.to_thread(lambda: requests.get(url, timeout=10).content)),
+                media_type='application/octet-stream',
+                headers=headers
+            )
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

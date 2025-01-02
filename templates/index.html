@@ -7,6 +7,30 @@
         <meta name="theme-color" content="#0095f6">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        
+        <!-- Preload critical resources -->
+        <link rel="preload" href="/static/styles.css" as="style">
+        <link rel="preload" href="/static/script.js" as="script">
+        <link rel="preload" href="/static/logo.svg" as="image" type="image/svg+xml">
+        
+        <!-- Preconnect to external domains -->
+        <link rel="preconnect" href="https://code.jquery.com">
+        <link rel="dns-prefetch" href="https://code.jquery.com">
+        
+        <!-- Critical CSS inline -->
+        <style>
+            /* Critical path CSS */
+            body { margin: 0; padding: 0; }
+            .header { position: fixed; top: 0; width: 100%; background: #fff; z-index: 1000; }
+            .form-block { padding-top: 80px; }
+            .search-form__input { width: 100%; padding: 12px; }
+            .search-form__action-btn { padding: 12px 24px; }
+        </style>
+        
+        <!-- Defer non-critical CSS -->
+        <link rel="stylesheet" href="/static/styles.css" media="print" onload="this.media='all'">
+        
+        <!-- Meta tags -->
         <meta http-equiv="content-language" content="en">
         <link rel="alternate" hreflang="en" href="https://instasave.world/" />
         <link rel="alternate" hreflang="hi" href="https://instasave.world/hi/" />
@@ -20,14 +44,22 @@
         <meta property="og:description" content="Download Instagram reels and videos without watermark. Best Instagram reels downloader and video saver. Save Instagram content in HD quality for free.">
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://instasave.world">
-        <link rel="preconnect" href="https://code.jquery.com">
-        <link rel="dns-prefetch" href="https://code.jquery.com">
+        
         <title>InstaSave - Social Media Video Downloader</title>
-        <link rel="stylesheet" href="/static/styles.css" media="print" onload="this.media='all'">
-        <link rel="shortcut icon" href="/static/favicon.ico">
-        <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png">
+        
+        <!-- Defer JavaScript -->
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" defer></script>
         <script src="/static/script.js" defer></script>
+        
+        <!-- Inline critical JavaScript -->
+        <script>
+            // Show content immediately
+            document.documentElement.style.visibility = 'visible';
+        </script>
+        
+        <link rel="shortcut icon" href="/static/favicon.ico">
+        <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png">
+        
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 document.querySelectorAll('[data-scroll-to]').forEach(link => {
@@ -74,7 +106,7 @@
         <meta name="description" lang="id" content="Download reels Instagram tanpa watermark. Unduh video dan cerita Instagram dengan kualitas HD.">
         <meta name="description" lang="pt" content="Baixe reels do Instagram sem marca d'água. Faça download de vídeos e stories em alta qualidade.">
         <meta name="description" lang="es" content="Descarga reels de Instagram sin marca de agua. Descarga videos e historias en alta calidad.">
-</head>
+    </head>
 <body>
         <!-- Header -->
         <header class="header">
